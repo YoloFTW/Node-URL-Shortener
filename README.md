@@ -6,7 +6,8 @@ Node-URL-Shortener is an application written in node with a react front-end that
 
 ## Getting Started
 
-Before you can use you will need to fill in the .env_example file, rename it to .env, and run the Node server.
+To get started with the project, follow these steps:
+
 1. Navigate to the React folder.
 ```shell
 cd React/client
