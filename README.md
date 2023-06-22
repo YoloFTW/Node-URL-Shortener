@@ -7,22 +7,33 @@ Node-URL-Shortener is an application written in node with a react front-end that
 ## Getting Started
 
 Before you can use you will need to fill in the .env_example file, rename it to .env, and run the Node server.
-
-1. Navigate to the Node folder.
+1. Navigate to the React folder.
 ```shell
-cd Node
+cd React/client
 ```
 2. Install the dependencies.
 ```shell
 npm install
 ```
-3. Fill in the necessary values in the .env_example file.
-4. Rename the .env_Example to .env
-5. Start the Node server.
+3. Build the react app.
+```shell
+npm run build
+```
+4. Navigate to the Node folder.
+```shell
+cd ../../Node
+```
+5. Install the dependencies.
+```shell
+npm install
+```
+6. Fill in the necessary values in the .env_Example file.
+7. Rename the .env_Example to .env
+8. Start the Node server.
 ```shell
 node .
 ```
-6. Navigate to your webserver. The default is http://localhost:3001
+9. Navigate to your webserver. The default is http://localhost:3001
 
 ### Dependencies
 
