@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.form-Div {
+  display: grid !important; 
+  grid-template-columns: 1fr;
+  gap: 10px;
+  text-align: center;
+}
+
+.form-Div label{
+  grid-column: 1;
+  justify-self: start;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.form-grid button{
+  justify-self: center;
+}
+
+
+.form-button{
+  margin-top: 15px;
+  align-self: center;
+  padding: 2px;
+}
+
+.button-center{
+  text-align: center;
+}
+
+
+/* location select */
+select.Locations{
+  max-width: 100%;
+  text-overflow: ellipsis;
+  display: flex;
+}
+
+form.Locations{
+  padding-top: 15px;
+}
+
+
+.text-container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container .first-text {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.text-container .second-text {
+  font-size: 1em;
+}
