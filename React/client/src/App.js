@@ -1,5 +1,7 @@
 import URLForm from "./Components/URLForm";
-import URLShow from "./Components/URLShow"
+import URLShow from "./Components/URLShow";
+import ErrorShow from "./Components/ErrorShow"
+
 
 import { useState } from 'react'
 
@@ -10,26 +12,42 @@ function App() {
 
 	const [ShortenedUrl, setShortUrl] = useState("");
 
+	const [Error, setError] = useState("");
+
 	const SubUrl = async (Url) => {
-		console.log(JSON.stringify(Url))
 
-		const res = await fetch("http://localhost:3001/shorten", {method: "POST", headers: {"content-type":"application/json"}, body: JSON.stringify({Url:Url})});
+		setShortUrl("");
 
-		const data = await res.json();
+		if(Url.match(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g)){
 
-		setShortUrl(data.ShortenedUrl)
+			const res = await fetch("http://localhost:3001/shorten", {method: "POST", headers: {"content-type":"application/json"}, body: JSON.stringify({Url:Url})});
 
-		console.log(ShortenedUrl)
+			const data = await res.json();
+
+			setError("");
+
+			setShortUrl(data.ShortenedUrl);
+
+		}else{
+
+			setError("Please Submit A Valid Url");
+
+		}
+
     }
 
 
 	return (
 		<div className="container">
+
+			{Error.length > 0 ? <ErrorShow Error={Error} /> : ""}
+
 			<div className="form-div">
 				<URLForm SubUrl={SubUrl} SetUrl={setUrl} Url={Url}/>
 			</div>
 
-			<URLShow ShortenedUrl={ShortenedUrl}/>
+			{ShortenedUrl.length > 0 ? <URLShow ShortenedUrl={ShortenedUrl}/> : ""}
+
 
 		</div>
 	);
