@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,57 +28,24 @@ body {
   text-align: center;
 }
 
-.form-Div label{
-  grid-column: 1;
-  justify-self: start;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.form-grid button{
-  justify-self: center;
-}
-
-
 .form-button{
   margin-top: 15px;
   align-self: center;
   padding: 2px;
 }
 
-.button-center{
-  text-align: center;
-}
-
-
-/* location select */
-select.Locations{
-  max-width: 100%;
-  text-overflow: ellipsis;
+.error-field{
+  background-color: rgba(255, 1, 1, 0.767);
   display: flex;
-}
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 
-form.Locations{
-  padding-top: 15px;
 }
-
 
 .text-container {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.text-container .first-text {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-
-.text-container .second-text {
-  font-size: 1em;
 }
